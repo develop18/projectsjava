@@ -1,0 +1,241 @@
+Cada vez que vayas a terminar trabajando con un repositorio remoto, lo primero que tienes que hacer es clonarlo.
+Pero debes clonarlo en un directorio específico.
+
+
+
+
+Comandos CLI (bash)
+pwd		Saber en qué directorio estoy
+cd /d		Cambias de torre
+cd ..		Para ir hacia el directorio de arriba
+ls -la		Ver qué es lo que hay donde estás parado
+cd <nombrecarpeta>     Para ir a esa carpeta
+
+Comandos git
+git status				Diferencia entre tu repositorio local y el remoto
+git add .				Guarda lo que tenemos en la máquina en el index
+git commit -m "Cuaquier comentario"	Crea un commit con ese nombre
+git push				Sube el commit al repositorio remoto
+
+...............................
+
+Anatomía Java.-
+
+project		(minúsculas)
+	packets		(minúsculas)
+
+		classes		(Pascal)
+			methods		(Camel)
+
+
+-------------------------------
+
+Naming conventions
+
+
+1) Pascal	(comienza con mayúscula)
+	UserName
+	MonthOfTheYear
+
+2) Camel	(comienza con minúscula)
+	ageOfTheUser
+	typeOfVariable
+	grupoDeAmigos
+
+3) Snake	(guión bajo)
+	age_of_the_user
+	STEPS_OF_DEFINITIONS
+
+---------------------------------
+
+public		La clase/método podrá ser llamado desde otra clase
+private		El método sólo podrá ser llamado dentro de la misma clase donde se ha creado
+
+static		El métoco podrá ser llamado como: Clase.método
+		De no ponerse, no aparecerá cuando se ponga el "."
+
+----------------------------------
+
+21/09/21
+Tareas para proyecto1.-
+https://github.com/develop18/proyecto1
+
+
+1) Crea un nuevo paquete para la empresa com.Informative
+2) Dentro del paquete crea 3 clases:
+	a) Una clase que contiene el método principal de este proyecto. Inicialmente el bloque de este método estará definido pero lo dejamos por ahora vacío
+	b) Una clase que se encargará de datos meteorológicos. Dentro de ella 2 métodos:
+		- Imprime la temperatura actual
+		- Imprime la humedad actual
+	c) Una clase que se dedica a informar en qué lugar vivimos. Sus métodos:
+		- Imprimir el nombre de la ciudad
+		- Imprimir el código postal
+		- Imprimir el país
+3) En la clase principal, imprime en este orden:
+	a) País
+	b) Ciudad
+	c) Temperatura
+	d) Humedad
+
+-----------------------------------
+
+
+
+23/09/21
+
+Most used data types:
+Primitives.-
+	integral:
+		- byte		(1B)
+		- short		(2B)
+		- int		(4B)
+		- long		(8B)
+
+	floating point:
+		- float		(4B)
+		- double	(8B)
+
+	caracter:
+		- char		(2B)
+
+	boolean:	
+		- boolean	(1bit)	No está definido con exactitud. Depende de la JVM
+		
+double puede almacenar: 1.7976931348623157 x 10308, 4.9406564584124654 x 10-324
+int puede almacenar: -2,147,483,648 .. 2,147,483,647
+
+
+Class type.-
+	String:
+		- referencias. Son instancias de una clase	(22B ?)
+
+La variable creada a partir de la clase cadena es un objeto. El objeto String tiene sus métodos que son estáticos. Pero el objeto creado a partir de él tiene sus métodos y como él no es una clase esos métodos ya no se pueden considerar estáticos.
+
+...............
+
+Tarea.-
+Tipos de variables
+
+1) 
+	a. Crear una variable para la temperatura en grados Centígrados
+	b. Crear otra variable que convierta la primera en Fahrenheit (0°C × 9/5) + 32 = 32°F)
+	c. Imprimir ambas con un mensaje "EnºC es: .... y en ºF es ...."
+
+2)
+	a. Crear una variable para la edad de un usuario
+	b. Una variable para saber qué edad tendrá dentro de 14 años
+	c. Otra variable para saber qué edad tenía hace 3 años
+	d. Imprimir las 3 variables con un mensaje
+
+3) 	En cada uno de los siguientes incisos imprimir el resultado:
+
+	a. Crear una variable booleana true. Otra false.
+	b. Crear 3 variables enteras a, b y c con valores respectivos 4, 8 y 8
+	c. Crear una variable booleana con operador lógico a < b
+	d. Crear una variable booleana con operador lógico a > b
+	e. Crear una variable booleana con operador lógico a <= b
+	f. Crear una variable booleana con operador lógico a >= b
+	g. Crear una variable booleana con operador lógico a <= c
+	h. Crear una variable booleana con operador lógico a >= c
+	i. Crear una variable booleana con operador lógico b <= c
+	j. Crear una variable booleana con operador lógico b >= c
+	k. Crear una variable booleana con operador lógico a == b
+	l. Crear una variable booleana con operador lógico a == c
+	m. Crear una variable booleana con operador lógico c == a
+	n. Crear una variable booleana con operador lógico c == b
+
+4) 
+	a. Crear una variable a partir de la clase String que tenga minúsculas y mayúsculas
+	b. Crear otra variable vacía a partir de String
+	c. Crear otra variable a partir de String pero esta vez será sólo de espacios en blanco
+	d. Con alguno de los métodos de esa clase, mostrar la longitud de cada una de esas variables
+	e. Con alguno de los métodos de la clase mostrar si c/u de esas variables es vacía
+	f. Con alguno de los métodos de la clase mostrar si c/u de esas variables es una cadena en blanco
+
+
+5)
+	a. Crear una variable de cadena con el contenido "Esto es positivo. Estamos ganando tiempo"
+	b. Crear una variable que use el método charAt para averiguar qué letra hay en una posición determinada de la cadena creada anteriormente. O espacios.
+	
+
+6) 
+	a. Crear una variable de cadena con cualquier contenido
+	b. Averiguar con qué métodos puedo conocer el índice de un carácter que existe dentro de la cadena. Guardarlo en una variable e imprimirlo.
+
+
+7)
+	a. Crear una variable de cadena con contenido: "tenemos que hacer esto?"
+	b. Averiguar qué hace el método lastIndexOf. Probar con la letra 'h' y luego con la 'e'
+
+8)
+	a. Crear una variable de cadena con contenido: "Sí, "
+	b. Crear una variable de cadena con contenido: "es importante."
+	b. Averiguar qué hace el método concat. Usarlo para concatenar la segunda con la primera y luego la primera con la segunda.
+
+
+...........
+
+Tarea.-
+Operador "+". Cadenas y/o números
+
+
+1)	
+	a. Crear 2 variables de cadena part1 y part2 con cualquier contenido. Imprimir
+		part1 + part2
+		part1 + " " + part2
+		part2 + part1
+
+2)
+	¿Qué se espera en los siguientes casos?
+	a. "My favourite number is " + 7
+	b. "My favourite number is " + 200.12
+	c. 7 + 200.12
+	d. "My favourite number is " + 7 + 200.12
+	e. 7 + 200.12 + " is my favourite number"
+	f. "My favourite number is " + (7 + 200.12)
+	g. Crea una variable numérica que almacene 7 + 200.12 e imprime un mensaje diciendo que ese es tu número favorito.
+
+............
+Nota.-
+Variables de referencia a partir de String
+
+String s1 = "Hello"
+String s2 = s1
+
+=> s1 y s2 son diferentes pero referencian al mismo valor
+
+............
+
+Tarea.-
+Instanciando objetos.
+
+
+ClassName objectName = new ClassName(Parameters);
+Pero para la clase String no es necesario porque esa clase es inmutable, es decir, su valor NO se puede cambiar. Si lo intentamos lo que se crea es una referencia a otra dirección.
+
+1)	
+	a. Crea un objeto de la clase Point e imprímelo
+	
+
+2)
+	a. Crea un objeto de la clase Scanner, que nos permite leer el teclado
+	
+3)
+	a. Escribe un método que nos pida nuestro nombre y espere a que lo tecleemos. Imprimir el nombre.
+	b. Método que tome 2 valores numéricos enteros del teclado y diga si el primero es mayor que el segundo.
+	c. Tomar 3 valores numéricos de punto flotante y realizar A+B/C
+	d. Método que nos pida el nombre completo (nombre y apellido) y lo muestre.
+
+
+
+
+
+
+
+	
+
+
+	c. Crear
+		
+
+
