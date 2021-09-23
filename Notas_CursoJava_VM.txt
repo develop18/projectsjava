@@ -119,7 +119,7 @@ Tipos de variables
 1) 
 	a. Crear una variable para la temperatura en grados Centígrados
 	b. Crear otra variable que convierta la primera en Fahrenheit (0°C × 9/5) + 32 = 32°F)
-	c. Imprimir ambas con un mensaje "EnºC es: .... y en ºF es ...."
+	c. Imprimir ambas con un mensaje "En ºC es: .... y en ºF es ...."
 
 2)
 	a. Crear una variable para la edad de un usuario
