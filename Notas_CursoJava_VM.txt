@@ -118,6 +118,7 @@ Tipos de variables
 
 1) 
 	a. Crear una variable para la temperatura en grados Centígrados
+----> Nos hemos quedado aquí
 	b. Crear otra variable que convierta la primera en Fahrenheit (0°C × 9/5) + 32 = 32°F)
 	c. Imprimir ambas con un mensaje "En ºC es: .... y en ºF es ...."
 
@@ -213,6 +214,12 @@ Instanciando objetos.
 ClassName objectName = new ClassName(Parameters);
 Pero para la clase String no es necesario porque esa clase es inmutable, es decir, su valor NO se puede cambiar. Si lo intentamos lo que se crea es una referencia a otra dirección.
 
+Reading input from keyboard:
+
+Scanner input = new Scanner(System.in);
+float f = input.nextFloat();
+
+
 1)	
 	a. Crea un objeto de la clase Point e imprímelo
 	
@@ -221,21 +228,137 @@ Pero para la clase String no es necesario porque esa clase es inmutable, es deci
 	a. Crea un objeto de la clase Scanner, que nos permite leer el teclado
 	
 3)
-	a. Escribe un método que nos pida nuestro nombre y espere a que lo tecleemos. Imprimir el nombre.
-	b. Método que tome 2 valores numéricos enteros del teclado y diga si el primero es mayor que el segundo.
-	c. Tomar 3 valores numéricos de punto flotante y realizar A+B/C
-	d. Método que nos pida el nombre completo (nombre y apellido) y lo muestre.
+	a. Escribe un método que nos pida un nombre y espere a que lo tecleemos. Imprimir el nombre.
+	b. Método que tome sucesivamente 2 valores numéricos enteros del teclado y diga si el primero es mayor que el segundo.
+	c. Tomar sucesivamente 3 valores numéricos de punto flotante y realizar A+B/C. Agrupar por pares y predecir resultado para aprender las precedencias de las operaciones.
+	d. Pedir un nombre y una edad. Imprimir con los mensajes correspondientes.
+	e. Método que nos pida el nombre completo (nombre y apellido) y lo muestre. (Diferencia entre los métodos next y nextline)
+	f. Nombre completo (apellidos) y edad, en la misma pregunta. El usuario da <enter> después del nombre completo
+	System.out.println(s.nextline() + "! you are " + s.nextInt() + " years old.")
 
 
+..........
+Tema.-
+Type faster
+
+Ctrl + Left arrow		Mueve cursor una palabra a la izquierda
+Ctrl + Right arrow		Mueve cursor una palabra a la derecha
+[Fn +] Inicio			Mueve cursor al inicio de la línea
+[Fn +] Fin			Mueve cursor al final de la línea
+RePag (PageUp)			Mueve cursor al inicio del fichero
+AvPag (PageDown)		Mueve cursor al final del fichero. Si el fichero cubre más de una 					página, presionar PageDown otra vez
+
+Ctrl + Down arrow		Scroll bar hacia abajo
+Ctrl + Up arrow			Scroll bar hacia arriba
+
+Alt + Left/Right arrow		Selecciona la siguiente pestaña del editor (izquierda/derecha)
+
+Shift ( + anteriores) 		Selecciona el pedazo que vaya recorriendo
+Shift + Inicio			Selecciona hasta el inicio de la línea
+Shift + End			Selecciona hasta el final de la línea
+Shift + Ctrl + Home		Selecciona hasta el inicio del fichero
+Shift + Ctrl + End		Selecciona hasta el final del fichero
+Shift + Up arrow		Selecciona hasta la misma posición en la línea de arriba
+Shift + Down arrow		Selecciona hasta la misma posición en la línea de abajo
+Ctrl + A			Selecciona todo el fichero
+Ctrl + w			Va ampliando la selección sucesivamente a partir de donde estoy
+				
+Shift + Backspace		Borra hacia atrás tabulaciones, sin saltar a la línea de arriba
+Ctrl + d			Duplica la línea donde estoy
+Ctrl + x			Borra la línea completa donde estoy
+Ctrl + / (Numpad)		Comenta la línea (o varias líneas, si están seleccionadas)
+				Para quitarlo, nuevamente presionar: Ctrl + / (Numpad)
+Ctrl + Shift + / (Numpad)	Abre y cierra un bloque de comentario
+Shift + Alt + Up arrow		Sube la línea donde estoy
+Shift + Alt + Down arrow	Baja la línea donde estoy
 
 
+Ctrl + Alt + s			Abre diálogo de Settings
+Ctrl + Shift + f		Busca dentro de ese path
+Ctrl + f			Busca dentro del fichero que tengo activo
+Alt + j				Va adicionando a la selección el siguiente encontrado
+Ctrl + mouse			Pequeña info
+Ctrl + N			Ir a clase
+Ctrl + G			Ir a línea
+Ctrl + Alt + B			Ir a implementación
+Ctrl + Shift + B		Ir a declaración del tipo	
+Shift + F10			Ejecutar
+
+..........
+
+Tarea.-
+Autoincremento y autodecremento. Operador de asignación aumentada
+
+1) 
+	a. Crear una variable entera y asignarle un valor
+	b. Imprimir su valor autoincrementado
+
+2) 
+	a. Crear una variable entera y asignarle un valor
+	b. Imprimir su valor autodecrementado
+
+3) 
+	a. Crear una variable x y asignarle un valor 6
+	b. ¿Qué producen las siguientes asignaciones?
+		I) x += 1
+		II) x += 3
+		III) x *= 2
+		IV) x *= 1
+		V) x *= 5+1
+		VI) x *= x
+ 
+...........
+
+Tema.-
+Relational operators: ==, !=, >, >=, <. >=
+
+boolean b1 = ( 25 == 5*5) // true
+boolean b2 = ( 2 == 3) // false
+boolean b3 = (2 + 3) == (6 - 1) // true
+boolean b4 = (2 + 3) != (6 - 1) // false
+Los paréntesis son opcionales. Sólo para hacer el código más legible
+
+...........
+
+Tema.-
+Lógical operators: Para construir operaciones complejas. Se usan entre valores booleanos y su resultado es booleano también.
+AND	&&
+OR	||
+NOT	!
 
 
+Tarea.-
+1) ¿Cuál es el resultado de esta operación? ¿Es verdadera?
+	boolean b1 = true && true;
+	boolean b2 = b1 && false && true;
+	boolean b3 = b2 || true;
+	boolean b4 = !b2
+	boolean b5 = !(b4 && b2);
+...........
 
-	
+Tema.-
+Conditional operator
 
+booleanExpression ? expression1 : expression2
 
-	c. Crear
-		
+Tarea.-
+
+1) ¿Cuál es el valor que toma la variable i?
+	int a = 10;
+	int b = 15;
+	int max = a > b? a a : b;
+
+2) 
+	String name = "Mi academia";
+	System.out.println ( name.isEmpty() ? "No existe" : name)
+	a. ¿Qué hace el anterior bloque? 
+	b. ¿Qué ocurre si hago vacía la variable name?
+	c. ¿Qué ocurre si niego el método? (!name.isEmpty())
+
+...........
+
+Tarea.-
+If statement
+
 
 
