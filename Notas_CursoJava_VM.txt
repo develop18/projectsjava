@@ -51,7 +51,7 @@ Naming conventions
 public		La clase/método podrá ser llamado desde otra clase
 private		El método sólo podrá ser llamado dentro de la misma clase donde se ha creado
 
-static		El métoco podrá ser llamado como: Clase.método
+static		El métoco podrá ser llamado desde el método main como: Clase.método
 		De no ponerse, no aparecerá cuando se ponga el "."
 
 ----------------------------------
@@ -241,6 +241,8 @@ float f = input.nextFloat();
 Tema.-
 Type faster
 
+Shortcuts:
+
 Ctrl + Left arrow		Mueve cursor una palabra a la izquierda
 Ctrl + Right arrow		Mueve cursor una palabra a la derecha
 [Fn +] Inicio			Mueve cursor al inicio de la línea
@@ -284,6 +286,13 @@ Ctrl + Alt + B			Ir a implementación
 Ctrl + Shift + B		Ir a declaración del tipo	
 Shift + F10			Ejecutar
 
+Ctrl + p			Lista los constructores que hay para esa clase
+Alt + Ins (en variable)		Menú de constructores, getters y setters, etc.
+fori + Tab			Lazo for con i
+				fore	Lazo for each
+				
+soutv + Tab			Imprimir con mensaje delante
+Alt + Enter			Importar
 ..........
 
 Tarea.-
@@ -359,6 +368,417 @@ Tarea.-
 
 Tarea.-
 If statement
+Expresión más general, con anidados:
+
+if(boolean-expression) {
+	statements
+}
+else if(boolean-expression) {
+	statements
+}
+else {
+	statements
+}
+
+Los "else" son opcionales. Y los statements no tienen por qué ser múltiples.
+
+1) 
+	a. Leer un entero que dé el usuario
+	b. Imprimir si el entero es mayor o menor que 100
 
 
+...........
+
+Tema.-
+Switch statement
+
+switch (expression) {
+    case value1:
+        statement(s)
+	break;
+    case value2:
+        statement(s)
+	break;
+    default:
+	statements(s)
+}
+
+...........
+
+Tarea.-
+Estructuras de programación: Loops
+
+1)	While loop
+	
+	while(boolean-expression) {
+		statements
+	}
+	
+	Escribe un programa que pide al usuario un entero entre 6 y 10 y no sale del bucle hasta que ese valor cumpla dicha condición.
+	Ej: "Enter a number between 6 and 10 --> "
+	    "Ooops! It doesn't meet the condition. Try again: "
+
+
+2) 	Do While loop
+	
+	do {
+		statements
+	} while (boolean-expression)
+
+	Imprime 4 veces "Hola"
+
+
+3)	For loop
+	
+	for (variable; condition; change) {
+		statements
+	}
+	(La variable se puede inicializar en la declaración del bucle: "variable")
+	Imprime 6 veces la frase "No tengo prisa"
+
+
+Nota: Los bucles se pueden anidar. Para evitar confusiones, utilizar variables diferentes en el bucle exterior y el interior.
+
+...........
+
+Tema.-
+Break y continue
+break: rompe el bucle independientemente de cualquier condición
+continue: salta el resto del cuerpo del body y CONTINÚA ejecutando el bucle como si hubiésemos terminado la ejecución de ese body en ese momento.
+
+...........
+
+Tema.-
+Scope and local variables
+
+Variable local: la que está definida dentro de un método.
+Los parámetros son también variables locales porque su scope es dentro del método.
+El scope de una variable local comienza justo donde se declara y termina al final del bloque. Por eso variables del mismo nombre pero con distintos scopes no tienen el mismo valor, no son lo mismo.
+
+...........
+
+Tarea.-
+Methods and return types
+
+1) Método void. Escribe un método que no devuelva un valor sino que realice una acción. Ej: imprimir un mensaje. 
+
+2) Método que retorna un valor.
+	public static int sum(int x, int y) {
+		int sum = x + y;
+		return sum;	
+	}
+ 	
+	Y en el método main: sum(1, 2)
+
+	a. Escribe un método que devuelva el producto de 2 números. Imprime ese resultado de varias combinaciones desde el método main
+	(Nota: esta es la forma de pasar arguments by value)
+
+...........
+
+Tema.-
+Pasando argumentos by reference
+
+Cuando se usa un objeto, el argumento que se pasa a un método es una referencia. Se cumple para todos los objetos excepto para String, porque es inmutable.
+
+Ver en mi proyecto "payment1" la clase PassingArguments
+
+...........
+
+Tema.-
+Method Overloading
+
+Es pasar el mismo método con diferentes signatures where the signature can differ by the number of input parameters or type of input parameters or both
+
+
+sayHi()
+sayHi("Hello my friend")
+
+sum(2, 3)
+sum("Resultado", 4, 5, 7.8)
+
+Overloaded method can have different return types:
+sayHi();
+Donde:
+public static void sayHi() {
+	System.out.println("hoola")
+}
+
+ó
+System.out.println( sayHi("Ernesto")
+Donde:
+public static String sayHi(String name) {
+	return "Hi " + name 
+}
+
+Nota: Overloaded method MUST have different parameters. Si tengo 2 métodos con el mismo nombre y la misma cantidad de parámetros, pero por ejemplo uno es void y el otro retorna una cadena, eso no es overloading sino que son 2 métodos diferentes.
+Métodos overloaded TIENEN que tener distintos parámetros y PUEDEN tener distintos return points.
+
+..........
+
+Tema.-
+Null y arrays
+
+Recordar: las primitive variables no tienen null. Sólo las reference.
+
+null: el valor de un objeto que no referencia nada. Ej: String text (y no inicializar con ningún valor)
+Si hacemos:
+text = "some algo"	// Aquí ya deja de ser null
+
+array: collection of variables of the same data type. 
+	- An array in Java is an object
+	- An array references a group of data
+	- The size of an array is fixed
+
+int miArreglo;		// En estos momentos esta variable miArreglo contiene null, porque no está apuntando a nada, es decir, NO está referenciando ningún arreglo.
+miArreglo = new int[10]	// Ahora ya no es nulo, porque está referenciando una dirección de una colección de 10 elementos enteros
+
+Pero se puede hacer en un único statement:
+int miArreglo = new int[10]	// Ahora miArreglo es un array que puede contener 10 enteros
+
+Array initializers.
+double[] misNumbers = {1.8, 2.7, -9.0, 0.33};
+ó
+misNumbers[0] = 1.8 
+misNumbers[1] = 2.7	...etc
+
+...........
+
+Tema.-
+Anonymous arrays. Passing arrays to methods
+
+anonymous array: an array without a variable referencing it
+Ej:
+new int[] {1, 2, 5, 6};
+Caso de uso:
+printArray(new int[] {1, 2, 5, 6});
+Es decir, tenemos un método al que le pasamos directamente un arreglo con valores para probarlo, y por tanto no necesitamos una variable para ello.
+
+Los arreglos son pasados a los métodos como referencia y por tanto lo que se haga con sus variables dentro del método en cuestión afectan al arreglo original. ¿Por qué? Porque los arreglos son OBJETOS y por esa razón siempre serán pasados como referencia.
+
+Cuando se retorna de un método lo que se devuelve es la dirección del arreglo. Es destruída en cuanto se sale del bloque del método. Pero si es referenciada en el método externo por una variable, entonces esta variable sí tiene una dirección y es la de ese arreglo.
+
+...........
+
+Tema.-
+Array class
+
+The array class is a class that contains some static methods that are used with arrays: sorting, searching, comparing, filling, returning a string representation. El arreglo se entrega como parámetro a los métodos de esta clase, una vez que fue creado como variable.
+Nota: el método search funciona a partir del método sort. De manera que un tipo de arreglo que no pueda ser ordenado (ejemplo, objetos Point) no podrá ser "searcheado" y dará una excepción en "lang.Comparable"
+
+Comparando arreglos:
+Si se usa == dará diferente porque los arreglos son objetos y por tanto estamos comparando sus referencias, es decir sus direcciones. 
+Para comparar el contenido de dos arreglos hay que usar el método ".equals"
+Existe ".equals" para la clase Array y también ".equals" para la clase String. La sintaxis es diferente pero en ambos casos lo que se compara es el contenido. Lo mismo para la clase Point. Es decir, en los objetos, el método ".equals" compara los contenidos y el "==" compara la variable como tal, que si es un objeto es sólo la referencia, es decir, una dirección a memoria.
+
+..........
+
+Tema.-
+Pasando una cantidad variable de argumentos a un método
+
+public static int sum(int... numbers) {
+
+}
+
+La elipsis representa que vamos a enviar una cantidad no fija de argumentos y en este caso es una cantidad variable de argumentos tipo int. Para poder resolver esto Java en este caso crea un arreglo de nombre "numbers" en este caso. Por tanto, dentro del método a esa variable hay que tratarla como un arreglo.
+Ese ejemplo podemos usarlo así:
+System.out.println( sum(1, 7, -2) );	// 6 --> Pasando una cantidad no fija de parámetros
+
+ó
+int[] numbers = {1, 7, -2};
+System.out.println( sum(numbers) );	// 6 --> Pasando una variable que es un arreglo
+
+ó
+System.out.println( sum(new int[] {1, 7, -2} )); 	// 6 --> Pasando un anonymous array	
+
+Recordar:
+- Sólo 1 parámetro de longitud variable puede especificarse en un método
+- Tiene que ser el último parámetro. Todos los demás parámetros tienen que precederle.
+- Puede pasarse un arreglo o un número variable de argumentos (con la elipsis)
+- Java crea un arreglo y pasa el argumento al método.
+
+.............
+
+Tema.-
+Two-dimensional arrays
+
+
+int[][] numbers;		// Rememember it is null
+numbers = new int[5][3];	// Constructor. Ahora es un arreglo de 5 filas por 3 columnas
+
+ó
+int[][] numbers = new int[5][3];
+Y si queremos inicializar al declarar:
+int[][] numbers = { {3, 5, 7}, {10, 2, 9} }
+Esto es un arreglo que tiene como primera fila 3, 5, 7 y como segunda fila 10, 2, 9
+
+Recordar: cuando queremos representar los números de un arreglo de enteros como cadenas debemos usar el método deepToString (no el toString) porque son objetos.
+
+..........
+
+Tema.-
+Array List
+
+Array list: un arreglo de tamaño que no es fijo. Es dinámico. Puede cambiar de acuerdo a los elementos que contenga. Es un objeto.
+
+ArrayList<Integer> numbers;	// null
+numbers = new ArrayList<>();	// constructor de la clase ArrayList
+NO se usan los tipos primitivos, sino clases. Porque sólo almacenamos objetos (String, Integer, Boolean, Double, Character...), no tipos primitivos (int, boolean, double, char...)
+
+ó en un solo statement:
+ArrayList<Integer> numbers = new ArrayList<>();
+
+Se especifica el tipo sólo a la izquierda, porque la parte de la izquierda crea el array list de enteros y el miembro derecho allocates el espacio en la memoria.
+
+ArrayList<String> fruits = new ArrayList<>();
+fruits.add("Apple");		// Así se adicionan elementos a esa lista dinámica. Existen otros métodos también para insertarlos en determinadas posiciones
+
+Para accesar un elemento: get()
+sout...	fruits.get(3)
+
+Para sustituir un elemento: 
+fruits.set(2, "Orange");
+
+Para quitar un elemento:
+fruits.remove(3);		// Removing by index
+ó
+fruits.remove("Banana");	// Removing by value
+
+Para borrar todos los elementos:
+fruits.clear()
+
+Para saber el tamaño:
+sout...	fruits.size()
+
+Para ordenarlo se usa el método sort() de la clase Collections
+Collections.sort(fruits);
+
+
+...........
+
+Tema.-
+For each
+
+for ( TYPE VAR_NAME : ArrayList/Array ) {
+}
+
+TYPE VAR_NAME 	es la declaración de una variable que irá tomando el valor de cada elemento a medida que iteramos (como en Python). Ej:
+for ( String item : itemArrayList )
+	System.out.print(item + " ");
+
+...........
+
+Tema.-
+OOP: objetos y clases
+
+Objeto: representa una entidad. Tiene: estado, comportamiento e identidad.
+
+El "estado" está representado por los campos del objeto con sus valores actuales. También es conocido como "propiedadese" o "atributos".
+
+El "comportamiento" son los métodos del objeto. También conocido como "acciones".
+
+La "identidad" es lo que hace único a un objeto. Ej:
+Point p1 = new Point(1,2);
+Point p2 = new Point(1,2);
+System.out.println( p1 == p2 );		// false. En este caso la identidad del objeto es la 					// dirección del objeto en la memoria
+
+La clase es la que define los campos y las acciones que van a tener los objetos.
+Podemos decir que la clase es el template o blueprint que define los data fields y methods que tendrá un objeto.
+El objeto es una instancia de la clase.
+
+Constructor: método usado para crear objetos. Un constructor puede hacer cualquier cosa pero está designado a inicializar acciones, por ejemplo, a inicializar los campos de datos de un objeto.
+	- tiene que tener el mismo nombre que la clase
+	- no tiene return type
+	- se invocan usando el operador "new"
+	- inicializan objetos
+	- un default constructor es un constructor sin argumentos y con el cuerpo vacío. No hace nada. Sólo se utilizará para crear un objeto.
+
+Recordar: Cuando no se crean constructores, Java automáticamente crea un default constructor. Pero cuando se crea un constructor, el default constructor no se crea.
+ 
+
+Point p1 = new Point(0,1)
+	estamos creando un objeto Point y apuntándolo con la variable p. La palabra clave "new" es la que llama al constructor de esa clase. El método que construye es Point(0,1) que está inicializando ese objeto. Y en realidad ese constructor es:
+
+public Point ( int x, int y ) {
+	this.x = x;
+	this.y = y;
+}
+
+Default constructor: Un constructor que no tiene parámetros
+Recordar: Si creamos una clase sin crearle su constructor, Java automáticamente crea un default constructor que no toma parámetros y podremos usarlo para crear objetos de esa clase.
+
+Instance variables: las variables declaradas directamente dentro de una clase. Pueden accesarse por cualquier método dentro de la clase. Cuando se declaran sin asignación toman valor nulo, como hemos visto en otros ejemplos. 
+
+..........
+
+Tema.-
+Static variables and methods
+
+- Static variables and methods belong to the class and are shared among all objects.
+- If an OBJECT modifies (el valor de) a static variable, all objects (el valor de la variable estática correspondiente en ese objeto) of the same class are affected.
+- A static variable can be accessed without creating an instance of the class. Esto es porque la variable estática pertenece a la CLASE, no al objeto. Entonces, podemos acceder a una variable estática por 2 métodos: creando un objeto o usando el nombre de la clase. The same for a static method. 
+- A static method can not access instance variables or methods.
+- A static method can only access static variables and static methods.
+
+a static method, which means that it can be accessed without creating an object of the class, unlike public, which can only be accessed by objects:
+
+...........
+
+Tema.-
+Visibility modifiers.
+
+public: from any other class (even from other packages)
+private: only from the class
+protected: 
+default: from any class but only in the same package
+
+Por eso, para acceder variables private se crean los getters y setters y a ellos sí se les hace public. (Encapsulation)
+
+getter (accessor)	public propertyType getPropertyName()
+setter (mutator)	public void setPropertyName(...)
+
+..........
+
+Tema.-
+Clases inmutables. Objetos inmutables			<--- OJO. Revisar este tema
+
+objeto inmutable: su contenido no puede cambiarse. Es decir, los valores de sus campos no pueden alterarse.
+clase inmutable: la clase que se usa para crear un objeto inmutable.
+Ej: la clase String es inmutable y cualquier objeto que se cree a partir de ella es inmutable.
+En una clase inmutable:
+	- todos los campos tienen que ser privados
+	- no puede haber setters
+	- ningún getter puede devolver campos de datos que sean mutables, es decir, un getter que devuelva un objeto, ese objeto tiene que ser inmutable. Eso aplica a campos de tipo referencia (o sea, objetos)
+
+........
+
+Tema.-
+Keyword "this"
+
+this: referencia al propio OBJETO. Se usa para:
+	- referenciar instance fields
+	- referenciar instance methods
+	- invocar un constructor
+
+
+Inner classes: clase dentro de otra clase. Por tanto es una clase miembro de la que la contiene. Su visibilidad es default. Y puede:
+	- acceder miembros private de la clase que la contiene
+	- tener modificadores de acceso private
+
+	No puede:
+	- tener sus propias variables private. (hay una excepción: las final)
+
+Hay varios tipos de inner classes y la ventaja de usarlas es que al ser declaradas private podemos limitar el acceso.
+
+.........
+
+Tema.-
+UML: Unified Modeling Language
+
+Se inventó para crear diagramas en computación. Ej: el diagrama de una clase.
+Primero vienen los atributos, luego una línea clara de separación y a continuación vienen los métodos. Todos ellos son los miembros de una clase
+
+"-" o "." indican que el miembro es private
+Si está subrayado es que el miembro es static
+"+" indica que el miembro es público
+Si el método no tiene un type a la derecha es porque es un constructor (además tiene el mismo nombre que la clase ¿seguro?)
 
